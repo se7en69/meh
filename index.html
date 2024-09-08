@@ -40,6 +40,132 @@
     </div>
     <!-- Loader -->
 
+<!-- News Popup -->
+<div id="news-popup" class="popup">
+    <div class="popup-content">
+        <span class="close-button" onclick="closePopup()">&times;</span>
+        <h2>Latest News</h2>
+        <p>Join our upcoming Workshop on Charting the Future: Exciting Careers in Bioinformatics on 12 Sep 2024! Register now to secure your spot.</p>
+        <button onclick=window.location.href="https://bioinfocamp.co/Events.html" class="popup-button">Learn More</button>
+        <button onclick=window.location.href="https://forms.gle/6w8gSYu384z7mYv58" class="popup-button">Enroll Now</button>
+    </div>
+</div>
+<!-- End of News Popup -->
+
+<style>
+    /* Popup container */
+    .popup {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent dark background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        animation: fadeIn 0.5s; /* Fade-in animation */
+    }
+    
+    /* Fade-in animation */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    /* Popup content */
+    .popup-content {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px; /* Rounded corners */
+        max-width: 450px;
+        width: 90%;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
+        position: relative;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+        animation: slideDown 0.6s ease-out; /* Slide down animation */
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: popupAppear 0.5s ease-out forwards;
+    }
+    
+    /* Popup content appearance animation */
+    @keyframes popupAppear {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Close button */
+    .close-button {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #888; /* Softer color for close button */
+        transition: color 0.2s;
+    }
+    
+    .close-button:hover {
+        color: #d9534f; /* Red color on hover */
+    }
+    
+    /* Popup heading */
+    .popup-content h2 {
+        font-size: 24px;
+        color: #333; /* Dark text color */
+        margin-bottom: 10px;
+    }
+    
+    /* Popup text */
+    .popup-content p {
+        font-size: 16px;
+        color: #555; /* Softer text color */
+        margin-bottom: 20px;
+        line-height: 1.6; /* Better readability */
+    }
+    
+    /* Popup button */
+    .popup-button {
+        background-color: #28a745; /* Match your website's color */
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px; /* Rounded button */
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 15px;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Button shadow */
+    }
+    
+    .popup-button:hover {
+        background-color: #218838;
+        transform: translateY(-2px); /* Subtle lift effect on hover */
+    }
+    </style>
+
+<script>
+    // Function to show the popup
+    function showPopup() {
+      document.getElementById("news-popup").style.display = "flex";
+    }
+  
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById("news-popup").style.display = "none";
+    }
+  
+    // Show the popup when the page loads
+    window.onload = function () {
+      showPopup();
+    };
+  </script>
 
 
     <!-- Navbar Start -->
